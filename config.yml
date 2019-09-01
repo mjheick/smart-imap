@@ -1,0 +1,33 @@
+---
+# Globals
+globals:
+  debug: false
+
+# Configuring host connection information
+hosts:
+  heick.email: # actual domain name
+    server: localhost
+    port: 143
+    username: username
+    password: password
+    folder_inbox: INBOX
+    folder_unsorted: UNSORTED
+  server.two:
+    server: localhost
+    port: 143
+    username: server
+    password: password
+    folder_inbox: INBOX
+    folder_unsorted: UNSORTED
+
+# What to do with specific mail per each configuration
+folders:
+  heick.email:
+    SPAM:
+      - spam
+      - spam1
+    myself: # the following below moves google@domain and facebook@domain to folder myself, instead of to a google and facebook folder
+      - google
+      - facebook
+  server.two:
+    SPAM:
